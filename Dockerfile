@@ -5,7 +5,7 @@ LABEL Website="https://qainsights.com"
 LABEL Description="Apache JMeter Dockerfile for GitHub Actions with JMeter Plugins"
 
 ENV JMETER_VERSION "5.4.3"
-ENV JMETER_HOME "/opt/apache/apache-jmeter-${JMETER_VERSION}"
+ENV JMETER_HOME "/opt/apache-jmeter-${JMETER_VERSION}"
 ENV JMETER_BIN "${JMETER_HOME}/bin"
 ENV PATH "$PATH:$JMETER_BIN"
 ENV JMETER_CMD_RUNNER_VERSION "2.3"
@@ -21,8 +21,8 @@ COPY cmdrunner-2.3.jar /JMETER_LIB
 RUN apk --no-cache add curl ca-certificates openjdk9-jre && \
     curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     tar -zxvf /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
-    mkdir -p /opt/apache && \
-    mv apache-jmeter-${JMETER_VERSION} /opt/apache && \
+    mkdir -p /opt && \
+    mv apache-jmeter-${JMETER_VERSION} /opt && \
     rm /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     rm -rf /var/cache/apk/* && \
     chmod a+x /entrypoint.sh && \
