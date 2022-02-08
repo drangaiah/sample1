@@ -13,11 +13,12 @@ java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-mana
 
 cd /opt/apache/apache-jmeter-${JMETER_VERSION}/bin/
 java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install jpgc-udp=0.4
+java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install jpgc-casutg=2.10
 
 chmod a+x ${JMETER_HOME}/bin/*.sh
 
 pwd
 
-ls -l ${JMETER_HOME}/bin/*.sh
+#ls -l ${JMETER_HOME}/bin/*.sh
 
-PluginsManagerCMD install jpgc-udp=0.4, jpgc-casutg
+PluginsManagerCMD.sh install jpgc-udp=0.4, jpgc-casutg=2.10
