@@ -32,3 +32,5 @@ RUN apk --no-cache add curl ca-certificates openjdk9-jre && \
 RUN /jmeter-plugin-install.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
+
+RUN pip install bzt
