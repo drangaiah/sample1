@@ -1,0 +1,17 @@
+execution:
+- scenario:
+    script: sampletest.jmx
+
+reporting:
+- module: final_stats
+  dump-csv: sampletest4.csv
+  dump-xml: sampletest4.xml
+  dump-jtl: sampletest4.jtl
+
+#reporting:
+#  - module: junit-xml
+#filename: result.xml
+#data-source: sample-labels    
+modules:
+  blazemeter:
+    token: 33d5712f964c7812d010e3f3:f86dfd28ad33afc1098ffc9f7ee19b5da06a1ac1facc882624578d053344e92bbf91f268
